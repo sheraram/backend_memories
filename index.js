@@ -6,7 +6,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import postRoutes from './routes/posts.js';
 import userRouter from "./routes/user.js";
-const http = require('http');
+// const http = require('http');
 
 const app = express();
 dotenv.config();
@@ -24,9 +24,9 @@ app.get('/', (req,res) => {
 
 const PORT = process.env.PORT|| 5000;
 
-const server = http.createServer(app);
+// const server = http.createServer(app);
 mongoose.connect(process.env.CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => server.listen(PORT, () => console.log(`Server Running on Port: http://localhost:${PORT}`)))
+  .then(() => app.listen(PORT, () => console.log(`Server Running on Port: http://localhost:${PORT}`)))
   .catch((error) => console.log(`${error} did not connect`));
 
 mongoose.set('useFindAndModify', false);
