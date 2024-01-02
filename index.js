@@ -6,7 +6,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import postRoutes from './routes/posts.js';
 import userRouter from "./routes/user.js";
-const http = require('http');
+// const http = require('http');
 
 const app = express();
 dotenv.config();
